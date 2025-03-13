@@ -5,10 +5,10 @@ s.summary          = "An easy to use, customizable replacement for UISegmentedCo
 s.description      = <<-DESC
 BetterSegmentedControl is an easy to use, customizable replacement for UISegmentedControl and UISwitch written in Swift.
 DESC
-s.homepage         = "https://github.com/gmarm/BetterSegmentedControl"
+s.homepage         = "https://github.com/freeblow/BetterSegmentedControl"
 s.license          = 'MIT'
 s.author           = { "George Marmaridis" => "gmarmas@gmail.com" }
-s.source           = { :git => "https://github.com/gmarm/BetterSegmentedControl.git", :tag => "0.8" }
+s.source           = { :git => "https://github.com/freeblow/BetterSegmentedControl.git", :tag => "0.8" }
 s.social_media_url = 'https://twitter.com/gmarmas'
 s.platform     = :ios, '8.0'
 s.requires_arc = true
