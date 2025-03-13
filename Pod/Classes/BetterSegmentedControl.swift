@@ -60,7 +60,7 @@ import UIKit
     
     // MARK: Properties
     /// The selected index
-    public fileprivate(set) var index: UInt
+    @objc public fileprivate(set) var index: UInt
     /// The titles / options available for selection
     @objc public var titles: [String] {
         get {
@@ -306,7 +306,7 @@ import UIKit
      
      - throws: An error of type IndexBeyondBounds(UInt) is thrown if an index beyond the available indices is passed.
      */
-    public func setIndex(_ index: UInt, animated: Bool = true) throws {
+    @objc public func setIndex(_ index: UInt, animated: Bool = true) throws {
         guard titleLabels.indices.contains(Int(index)) else {
             throw IndexError.indexBeyondBounds(index)
         }
