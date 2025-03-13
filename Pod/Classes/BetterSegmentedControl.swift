@@ -62,7 +62,7 @@ import UIKit
     /// The selected index
     public fileprivate(set) var index: UInt
     /// The titles / options available for selection
-    public var titles: [String] {
+    @objc public var titles: [String] {
         get {
             let titleLabels = titleLabelsView.subviews as! [UILabel]
             return titleLabels.map { $0.text! }
@@ -140,7 +140,7 @@ import UIKit
         didSet { setNeedsLayout() }
     }
     /// The indicator view's border width
-    public var indicatorViewBorderWidth: CGFloat {
+    @objc public var indicatorViewBorderWidth: CGFloat {
         get {
             return indicatorView.layer.borderWidth
         }
@@ -149,7 +149,7 @@ import UIKit
         }
     }
     /// The indicator view's border width
-    public var indicatorViewBorderColor: CGColor? {
+    @objc public var indicatorViewBorderColor: CGColor? {
         get {
             return indicatorView.layer.borderColor
         }
@@ -170,32 +170,32 @@ import UIKit
         }
     }
     /// The titles' font
-    public var titleFont: UIFont = UILabel().font {
+    @objc public var titleFont: UIFont = UILabel().font {
         didSet {
             titleLabels.forEach { $0.font = titleFont }
         }
     }
     /// The selected title's font
-    public var selectedTitleFont: UIFont = UILabel().font {
+    @objc public var selectedTitleFont: UIFont = UILabel().font {
         didSet {
             selectedTitleLabels.forEach { $0.font = selectedTitleFont }
         }
     }
     /// The titles' border width
-    public var titleBorderWidth: CGFloat = 0.0 {
+    @objc public var titleBorderWidth: CGFloat = 0.0 {
         didSet {
             titleLabels.forEach { $0.layer.borderWidth = titleBorderWidth }
         }
     }
     /// The titles' number of lines
-    public var titleNumberOfLines: Int = 1 {
+    @objc public var titleNumberOfLines: Int = 1 {
         didSet {
             titleLabels.forEach { $0.numberOfLines = titleNumberOfLines }
             selectedTitleLabels.forEach { $0.numberOfLines = titleNumberOfLines }
         }
     }
     /// The titles' border color
-    public var titleBorderColor: CGColor = UIColor.clear.cgColor {
+    @objc public var titleBorderColor: CGColor = UIColor.clear.cgColor {
         didSet {
             titleLabels.forEach { $0.layer.borderColor = titleBorderColor }
         }
@@ -227,7 +227,7 @@ import UIKit
         titles = defaultTitles
         finishInit()
     }
-    public init(frame: CGRect,
+    @objc public init(frame: CGRect,
                 titles: [String],
                 index: UInt,
                 backgroundColor: UIColor,
@@ -338,7 +338,7 @@ import UIKit
                            delay: 0.0,
                            usingSpringWithDamping: bouncesOnChange ? Animation.springDamping : 1.0,
                            initialSpringVelocity: 0.0,
-                           options: [UIViewAnimationOptions.beginFromCurrentState, UIViewAnimationOptions.curveEaseOut],
+                           options: [UIView.AnimationOptions.beginFromCurrentState, UIView.AnimationOptions.curveEaseOut],
                            animations: {
                             () -> Void in
                             self.moveIndicatorView()
